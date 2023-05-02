@@ -1,6 +1,4 @@
-// import user from '../user.json';
 import css from './Profile.module.css';
-
 import PropTypes from 'prop-types';
 
 export const Profile = ({ avatar, username, tag, stats, location }) => {

@@ -1,5 +1,24 @@
+.statistics {
+  width: 800px;
+  border: 2px solid grey;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
 .title {
-  margin-top: 0;
   text-align: center;
   text-transform: uppercase;
+}
+.statList {
+  background-color: #f5f6f7;
+  display: flex;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.label {
+  color: gray;
+}
+.percentage {
+  font-weight: 600;
 }
