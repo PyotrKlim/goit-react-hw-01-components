@@ -5,12 +5,12 @@ import css from './FriendList.module.css';
 export const FriendList = ({ friends }) => {
   return (
     <ul className={css.friendList}>
-      {friends.map(event => (
+      {friends.map(({ avatar, name, isOnline, id }) => (
         <FriendListItem
-          avatar={event.avatar}
-          name={event.name}
-          isOnline={event.isOnline}
-          key={event.id}
+          avatar={avatar}
+          name={name}
+          isOnline={isOnline}
+          key={id}
         />
       ))}
     </ul>
@@ -18,5 +18,12 @@ export const FriendList = ({ friends }) => {
 };
 
 FriendList.propTypes = {
-  friends: PropTypes.arrayOf(Object).isRequired,
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+    }).isRequired
+  ).isRequired,
 };

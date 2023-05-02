@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 export const Statistics = ({ stats, title }) => {
   return (
     <section className={css.statistics}>
-      {title !== undefined && <h2 className={css.title}>{title}</h2>}
+      {title && <h2 className={css.title}>{title}</h2>}
 
       <ul className={css.statList}>
-        {stats.map(event => (
-          <li key={event.id}>
-            <span className={css.label}>{event.label}</span>
-            <span className={css.percentage}>{event.percentage}%</span>
+        {stats.map(({ id, label, percentage }) => (
+          <li key={id}>
+            <span className={css.label}>{label}</span>
+            <span className={css.percentage}>{percentage}%</span>
           </li>
         ))}
       </ul>

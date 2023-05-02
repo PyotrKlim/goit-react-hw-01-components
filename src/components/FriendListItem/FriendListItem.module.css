@@ -5,18 +5,21 @@
   justify-content: flex-start;
   align-items: center;
 }
-.true {
-  background-color: aquamarine;
-}
-.false {
-  background-color: brown;
-}
+
 .status {
   margin: 20px;
   padding: 20px;
-  /* background-color: brown; */
   border-radius: 50%;
 }
+.onLine {
+  composes: status;
+  background-color: aquamarine;
+}
+.offLine {
+  composes: status;
+  background-color: brown;
+}
+
 .status .avatar {
   width: 48px;
   padding-right: 20px;

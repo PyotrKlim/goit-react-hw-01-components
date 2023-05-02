@@ -11,12 +11,12 @@ export const TransactionHistory = ({ items }) => {
           <th scope="col">Currency</th>
         </tr>
       </thead>
-      {items.map(event => (
-        <tbody key={event.id}>
+      {items.map(({ id, type, amount, currency }) => (
+        <tbody key={id}>
           <tr>
-            <td>{event.type}</td>
-            <td>{event.amount}</td>
-            <td>{event.currency}</td>
+            <td>{type}</td>
+            <td>{amount}</td>
+            <td>{currency}</td>
           </tr>
         </tbody>
       ))}
@@ -25,6 +25,12 @@ export const TransactionHistory = ({ items }) => {
 };
 
 TransactionHistory.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string.isRequired))
-    .isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
